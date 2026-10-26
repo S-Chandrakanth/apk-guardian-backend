@@ -1,0 +1,33 @@
+# Web / API
+fastapi>=0.110,<1.0
+uvicorn[standard]>=0.27
+python-multipart>=0.0.9
+pydantic>=2.6
+pydantic-settings>=2.2
+email-validator>=2.1
+
+# Database
+SQLAlchemy>=2.0
+
+# Auth / security
+PyJWT>=2.8
+# Passwords use hashlib.scrypt from the standard library (no passlib/bcrypt needed).
+
+# APK static analysis
+androguard>=3.3.5,<5   # tested: 3.3.5, 4.0.2, 4.1.0, 4.1.4
+
+# Machine learning
+scikit-learn>=1.4
+pandas>=2.1
+numpy>=1.26
+joblib>=1.3
+
+# AI explanation (optional provider, called over HTTP)
+httpx>=0.27
+
+# Hardware bridge (optional)
+pyserial>=3.5
+
+# Testing
+pytest>=8.0
+pytest-cov>=4.1

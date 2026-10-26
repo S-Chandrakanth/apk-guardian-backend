@@ -1,0 +1,142 @@
+{
+  "generated_at_utc": "2026-10-24T17:58:28+00:00",
+  "synthetic_data": false,
+  "n_train": 32,
+  "n_test": 8,
+  "test_class_counts": {
+    "MALWARE": 5,
+    "BENIGN": 3
+  },
+  "threshold": 0.5,
+  "random_forest": {
+    "n": 8,
+    "confusion_matrix": {
+      "tn": 3,
+      "fp": 0,
+      "fn": 0,
+      "tp": 5
+    },
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 0.0,
+    "roc_auc": 1.0,
+    "pr_auc": 1.0
+  },
+  "baselines": {
+    "majority_class": {
+      "n": 8,
+      "confusion_matrix": {
+        "tn": 0,
+        "fp": 3,
+        "fn": 0,
+        "tp": 5
+      },
+      "accuracy": 0.625,
+      "precision": 0.625,
+      "recall": 1.0,
+      "f1": 0.7692307692307693,
+      "false_positive_rate": 1.0,
+      "false_negative_rate": 0.0,
+      "roc_auc": 0.5,
+      "pr_auc": 0.625
+    },
+    "logistic_regression": {
+      "n": 8,
+      "confusion_matrix": {
+        "tn": 3,
+        "fp": 0,
+        "fn": 0,
+        "tp": 5
+      },
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "roc_auc": 1.0,
+      "pr_auc": 1.0
+    }
+  },
+  "per_original_category": {
+    "Benign": {
+      "n": 3,
+      "label": "BENIGN",
+      "false_positive_rate": 0.0
+    },
+    "Malware": {
+      "n": 5,
+      "label": "MALWARE",
+      "recall": 1.0
+    }
+  },
+  "needs_review_band": {
+    "band": [
+      0.4,
+      0.6
+    ],
+    "review_count": 0,
+    "review_rate": 0.0,
+    "decided_count": 8,
+    "metrics_on_decided": {
+      "n": 8,
+      "confusion_matrix": {
+        "tn": 3,
+        "fp": 0,
+        "fn": 0,
+        "tp": 5
+      },
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "roc_auc": 1.0,
+      "pr_auc": 1.0
+    }
+  },
+  "permutation_importance": {
+    "permissions_count": {
+      "mean_f1_drop": 0.0,
+      "std": 0.0
+    },
+    "activities_count": {
+      "mean_f1_drop": 0.0,
+      "std": 0.0
+    },
+    "services_count": {
+      "mean_f1_drop": 0.0,
+      "std": 0.0
+    },
+    "receivers_count": {
+      "mean_f1_drop": 0.0,
+      "std": 0.0
+    },
+    "api_calls_count": {
+      "mean_f1_drop": 0.18611111111111112,
+      "std": 0.10172129679778086
+    },
+    "strings_count": {
+      "mean_f1_drop": 0.05555555555555558,
+      "std": 0.05555555555555558
+    },
+    "dangerous_permissions": {
+      "mean_f1_drop": 0.0,
+      "std": 0.0
+    },
+    "suspicious_api_calls": {
+      "mean_f1_drop": 0.0,
+      "std": 0.0
+    }
+  },
+  "limits": [
+    "These numbers were measured on ONE held-out test split of THIS dataset only.",
+    "They do not estimate performance on other datasets, on newer malware, or at real-world malware/benign ratios.",
+    "Model probabilities are scores, not guaranteed certainty. They are not calibrated.",
+    "Static analysis with eight count features cannot detect every malware sample."
+  ]
+}

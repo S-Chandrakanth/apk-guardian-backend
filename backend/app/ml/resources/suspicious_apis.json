@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0",
+  "note": "Curated list of framework method references that are often abused by malware. It is a heuristic written for this prototype, NOT an authoritative signature list. Benign apps and libraries also use several of these (for example reflection), so a match is an indicator, never proof.",
+  "apis": [
+    {"class": "Landroid/telephony/SmsManager;", "methods": ["sendTextMessage", "sendMultipartTextMessage", "sendDataMessage"], "reason": "Sends SMS messages programmatically"},
+    {"class": "Landroid/telephony/gsm/SmsManager;", "methods": ["sendTextMessage", "sendMultipartTextMessage", "sendDataMessage"], "reason": "Sends SMS messages programmatically (deprecated API)"},
+    {"class": "Ljava/lang/Runtime;", "methods": ["exec"], "reason": "Runs an operating-system command"},
+    {"class": "Ljava/lang/ProcessBuilder;", "methods": ["start"], "reason": "Starts an operating-system process"},
+    {"class": "Ldalvik/system/DexClassLoader;", "methods": ["<init>", "loadClass"], "reason": "Loads code from a file at runtime"},
+    {"class": "Ldalvik/system/PathClassLoader;", "methods": ["<init>"], "reason": "Loads code from a path at runtime"},
+    {"class": "Ldalvik/system/InMemoryDexClassLoader;", "methods": ["<init>"], "reason": "Loads code from memory at runtime"},
+    {"class": "Ljava/lang/reflect/Method;", "methods": ["invoke"], "reason": "Calls methods through reflection, which can hide behaviour from static analysis"},
+    {"class": "Ljava/lang/System;", "methods": ["load"], "reason": "Loads a native library from an explicit path"},
+    {"class": "Landroid/telephony/TelephonyManager;", "methods": ["getDeviceId", "getImei", "getMeid", "getSubscriberId", "getLine1Number", "getSimSerialNumber"], "reason": "Reads device or subscriber identifiers"},
+    {"class": "Landroid/accounts/AccountManager;", "methods": ["getAccounts", "getAccountsByType"], "reason": "Lists accounts stored on the device"},
+    {"class": "Landroid/app/admin/DevicePolicyManager;", "methods": ["lockNow", "resetPassword", "wipeData"], "reason": "Uses device-administrator actions"},
+    {"class": "Landroid/content/pm/PackageManager;", "methods": ["setComponentEnabledSetting"], "reason": "Enables or disables app components (can hide the app icon)"},
+    {"class": "Landroid/webkit/WebView;", "methods": ["addJavascriptInterface"], "reason": "Exposes native objects to web content"},
+    {"class": "Landroid/media/MediaRecorder;", "methods": ["setAudioSource"], "reason": "Starts configuring audio recording"},
+    {"class": "Landroid/net/wifi/WifiManager;", "methods": ["setWifiEnabled"], "reason": "Switches Wi-Fi on or off"},
+    {"class": "Landroid/app/ActivityManager;", "methods": ["killBackgroundProcesses"], "reason": "Stops other apps' background processes"}
+  ]
+}
